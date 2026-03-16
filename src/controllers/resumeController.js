@@ -1,4 +1,4 @@
-const ResumeAnalysis = require("../models/ResumeAnalysis");
+const ResumeAnalysis = require("../models/resumeAnalysis");
 const { extractTextFromFile } = require("../services/resumeExtractService");
 const { scoreATS } = require("../services/atsScoreService");
 const { analyzeResumeWithAI } = require("../services/aiResumeService");
