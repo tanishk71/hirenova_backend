@@ -9,19 +9,21 @@ const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        lowercase: true,
+        trim: true,
+        match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Please use a valid email address']
     },
     password: {
         type: String,
         required: true
     },
-    skills: {
-        type: [String], // Array of Strings
-        default: []
+    isVerified: {
+    type: Boolean,
+    default: false
     },
-    preferredLocation: {
-        type: String
-    },
+    otp: String,
+    otpExpires: Date
     // References to other collections will be added later
 }, {
     timestamps: true // Adds createdAt and updatedAt fields automatically

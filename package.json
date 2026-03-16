@@ -13,11 +13,35 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "@google/genai": "^1.43.0",
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.13.6",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "mongoose": "^9.0.2"
+    "express-async-handler": "^1.2.0",
+    "json5": "^2.2.3",
+    "jsonwebtoken": "^9.0.3",
+    "kaggle": "^0.0.1",
+    "mammoth": "^1.11.0",
+    "mongoose": "^9.0.2",
+    "multer": "^2.0.2",
+    "node-fetch": "^2.7.0",
+    "nodemailer": "^7.0.12",
+    "openai": "^6.22.0",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "passport-google-oauth20": "^2.0.0",
+    "pdf-parse": "^2.4.5",
+    "uuid": "^13.0.0",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "autoprefixer": "^10.4.23",
+    "nodemon": "^3.1.11",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18"
   }
 }
