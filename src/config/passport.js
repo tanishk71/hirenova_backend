@@ -50,7 +50,7 @@ passport.use(new GoogleStrategy({
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:5000/api/auth/github/callback",
+    callbackURL: `${process.env.BACKEND_URL}/api/auth/github/callback`, // ✅ updated
     scope: ['user:email'] // request email access
   },
   async (accessToken, refreshToken, profile, done) => {
