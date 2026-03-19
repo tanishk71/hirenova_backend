@@ -14,7 +14,10 @@ router.get('/google/callback',
     const token = user.token;
     // Remove token from user object (optional)
     delete user.token;
-    res.redirect(`${process.env.FRONTEND_URL}/oauth-redirect?token=${token}&user=${encodeURIComponent(JSON.stringify(user))}`);
+
+    const redirectUrl = `${process.env.FRONTEND_URL}/oauth-redirect?token=${token}&user=${encodeURIComponent(JSON.stringify(user))}`;
+    console.log('Google OAuth redirecting to:', redirectUrl); // Debug log
+    res.redirect(redirectUrl);
   }
 );
 
@@ -28,7 +31,10 @@ router.get('/github/callback',
     const user = req.user;
     const token = user.token;
     delete user.token;
-    res.redirect(`${process.env.FRONTEND_URL}/oauth-redirect?token=${token}&user=${encodeURIComponent(JSON.stringify(user))}`);
+
+    const redirectUrl = `${process.env.FRONTEND_URL}/oauth-redirect?token=${token}&user=${encodeURIComponent(JSON.stringify(user))}`;
+    console.log('GitHub OAuth redirecting to:', redirectUrl); // Debug log
+    res.redirect(redirectUrl);
   }
 );
 
