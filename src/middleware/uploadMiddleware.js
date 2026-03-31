@@ -3,11 +3,13 @@ const path = require("path");
 const { v4: uuid } = require("uuid");
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, "uploads/"),
-  filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    cb(null, `${uuid()}${ext}`);
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, '../../uploads')); // adjust relative path to project root
   },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+  }
 });
 
 const fileFilter = (req, file, cb) => {

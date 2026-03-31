@@ -8,6 +8,14 @@ dotenv.config();
 console.log('FRONTEND_URL is:', process.env.FRONTEND_URL);
 connectDB();
 
+const fs = require('fs');
+const path = require('path');
+
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
+
 const app = express();
 
 // CORS configuration

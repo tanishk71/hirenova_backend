@@ -56,6 +56,7 @@ const analyzeResume = async (req, res) => {
   const jobDescription = req.body?.jobDescription || "";
 
   try {
+    console.log('File path:', req.file.path);
     const extractedText = await extractTextFromFile(
       req.file.path,
       req.file.mimetype
